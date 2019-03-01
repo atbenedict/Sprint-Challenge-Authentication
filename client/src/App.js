@@ -6,6 +6,7 @@ import LoginForm from "./components/LoginForm";
 import ItemList from "./components/ItemList";
 import LoggedIn from "./views/LoggedIn";
 import LoggedOut from "./views/LoggedOut";
+
 const StyledHeader = styled.nav`
   margin: 0 auto;
 
@@ -13,6 +14,15 @@ const StyledHeader = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #0075b2;
+  color: #231f20;
+  a {
+    text-decoration: inherit;
+    color: inherit;
+    &:hover {
+      color: #a4c2db;
+    }
+  }
 `;
 
 const StyledMain = styled.div`
@@ -27,11 +37,10 @@ const App = function() {
   return (
     <StyledMain>
       <StyledHeader>
-        <div className="logo">LOGO</div>
         <NavLink to="/login">Login</NavLink>
-        &nbsp;|&nbsp;
+
         <NavLink to="/users">Jokes</NavLink>
-        &nbsp;|&nbsp;
+
         {loggedIn ? <button onClick={() => logout()}>Logout</button> : null}
       </StyledHeader>
       {loggedIn ? <LoggedIn /> : <LoggedOut />}

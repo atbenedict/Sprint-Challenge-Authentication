@@ -1,8 +1,15 @@
 import React, { useState } from "react";
 import { setGlobal } from "reactn";
-import { Link } from "react-router-dom";
+
 import axios from "axios";
 import Input from "./Input";
+import styled from "styled-components";
+
+const MainView = styled.div`
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+`;
 
 const LoginForm = props => {
   const [values, setValues] = useState({ username: "", password: "" });
@@ -30,7 +37,7 @@ const LoginForm = props => {
 
   return (
     <>
-      <div className="login">
+      <MainView>
         <h2>Returning Member</h2>
         <form onSubmit={submitLogin}>
           <Input
@@ -52,7 +59,7 @@ const LoginForm = props => {
             <button type="submit">Login</button>
           </div>
         </form>
-      </div>
+      </MainView>
     </>
   );
 };

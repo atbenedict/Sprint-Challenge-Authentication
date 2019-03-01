@@ -1,7 +1,7 @@
 import React from "react";
 import ItemList from "../components/ItemList";
 
-const LoggedOut = () => {
+const LoggedIn = () => {
   return (
     <div>
       You are logged in.
@@ -10,4 +10,4 @@ const LoggedOut = () => {
   );
 };
 
-export default LoggedOut;
+export default LoggedIn;

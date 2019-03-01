@@ -2,6 +2,13 @@ import React, { useState } from "react";
 
 import axios from "axios";
 import Input from "./Input";
+import styled from "styled-components";
+
+const MainView = styled.div`
+  width: 100%;
+  text-align: center;
+  margin: 40px auto;
+`;
 
 const RegisterForm = props => {
   const [values, setValues] = useState({ username: "", password: "" });
@@ -27,7 +34,7 @@ const RegisterForm = props => {
 
   return (
     <>
-      <div className="register">
+      <MainView>
         <h2>New Member</h2>
         <form onSubmit={submitRegister}>
           <Input
@@ -49,7 +56,7 @@ const RegisterForm = props => {
             <button type="submit">Register</button>
           </div>
         </form>
-      </div>
+      </MainView>
     </>
   );
 };
