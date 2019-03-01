@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { setGlobal } from "reactn";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import Input from "./Input";
 

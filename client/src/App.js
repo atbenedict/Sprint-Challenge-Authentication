@@ -1,5 +1,5 @@
 import React, { setGlobal, useGlobal } from "reactn";
-import { Route, NavLink, withRouter } from "react-router-dom";
+import { Route, NavLink, withRouter, Switch } from "react-router-dom";
 import styled from "styled-components";
 import RegisterForm from "./components/RegisterForm";
 import LoginForm from "./components/LoginForm";
@@ -30,15 +30,20 @@ const App = function() {
         <div className="logo">LOGO</div>
         <NavLink to="/login">Login</NavLink>
         &nbsp;|&nbsp;
-        <NavLink to="/users">Users</NavLink>
+        <NavLink to="/users">Jokes</NavLink>
         &nbsp;|&nbsp;
         {loggedIn ? <button onClick={() => logout()}>Logout</button> : null}
       </StyledHeader>
       {loggedIn ? <LoggedIn /> : <LoggedOut />}
       <div>
-        <Route path="/register" render={props => <RegisterForm {...props} />} />
-        <Route path="/login" render={props => <LoginForm {...props} />} />
-        <Route path="/list" render={props => <ItemList {...props} />} />
+        <Switch>
+          <Route
+            path="/register"
+            render={props => <RegisterForm {...props} />}
+          />
+          <Route path="/login" render={props => <LoginForm {...props} />} />
+          <Route path="/list" render={props => <ItemList {...props} />} />
+        </Switch>
       </div>
     </StyledMain>
   );
