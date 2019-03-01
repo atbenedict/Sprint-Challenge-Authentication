@@ -49,11 +49,14 @@ function login(req, res) {
 
 function getJokes(req, res) {
   const requestOptions = {
-    headers: { accept: "application/json" }
+    headers: {
+      accept: "application/json",
+      useragent: "lambda school developers"
+    }
   };
 
   axios
-    .get("https://icanhazdadjoke.com/search", requestOptions)
+    .get("https://icanhazdadjoke.com/search?term=dad", requestOptions)
     .then(response => {
       res.status(200).json(response.data.results);
     })
