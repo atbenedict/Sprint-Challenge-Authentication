@@ -39,7 +39,7 @@ const App = function() {
       <StyledHeader>
         <NavLink to="/login">Login</NavLink>
 
-        <NavLink to="/users">Jokes</NavLink>
+        <NavLink to="/list">Jokes</NavLink>
 
         {loggedIn ? <button onClick={() => logout()}>Logout</button> : null}
       </StyledHeader>

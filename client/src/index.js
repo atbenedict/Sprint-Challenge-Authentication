@@ -11,7 +11,8 @@ setGlobal({
   loggedIn: false,
   token: "",
   password: "",
-  username: ""
+  username: "",
+  jokes: []
 });
 
 ReactDOM.render(

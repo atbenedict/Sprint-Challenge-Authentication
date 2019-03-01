@@ -1,5 +1,14 @@
 import React from "react";
+import { useGlobal } from "reactn";
+import Item from "./Item";
 
 export default function ItemList() {
-  return <div>JOKES!</div>;
+  const [jokes] = useGlobal("jokes");
+  return (
+    <>
+      {jokes.map((joke, id) => {
+        return <Item joke={joke} key={joke.id} />;
+      })}
+    </>
+  );
 }
